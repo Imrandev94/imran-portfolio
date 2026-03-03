@@ -117,7 +117,7 @@ export default function Testimonials() {
   );
 
   return (
-    <section className="py-24 bg-[#f5f5f5]" id="testimonials">
+    <section className="py-14 bg-[#f5f5f5]" id="testimonials">
       <div className="max-w-[1440px] mx-auto">
         {/* Badge + Title */}
         <motion.div
@@ -125,7 +125,7 @@ export default function Testimonials() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           variants={staggerContainer}
-          className="text-center mb-16 px-6"
+          className="text-center mb-10 px-6"
         >
           <motion.span
             variants={scrollVariants}

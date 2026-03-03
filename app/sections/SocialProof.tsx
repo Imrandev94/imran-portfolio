@@ -10,7 +10,7 @@ export default function SocialProof() {
   const y = useTransform(scrollYProgress, [0, 1], ["6%", "-6%"]);
 
   return (
-    <section ref={ref} className="py-24 bg-[#f5f5f5] overflow-hidden">
+    <section ref={ref} className="py-14 bg-[#f5f5f5] overflow-hidden">
       <motion.div style={{ y }} className="max-w-[1440px] mx-auto px-6 md:px-16 text-center">
         <motion.div
           initial="hidden"

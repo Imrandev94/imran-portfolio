@@ -1,11 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { scrollVariants, staggerContainer } from "../hooks/useScrollAnimation";
+import { projectsData } from "../projets/data";
+import { WoodVisual, CircuitVisual, BeautyVisual, CarVisual } from "../components/ProjectCardVisual";
+
+const cardVisuals = [WoodVisual, CircuitVisual, BeautyVisual, CarVisual];
 
 export default function Projets() {
   return (
-    <section className="py-24 bg-[#f5f5f5]" id="projets">
+    <section className="py-16 bg-[#f5f5f5]" id="projets">
       <div className="max-w-[1440px] mx-auto px-6 md:px-16">
         {/* Badge + Title */}
         <motion.div
@@ -13,7 +18,7 @@ export default function Projets() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           variants={staggerContainer}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <motion.span
             variants={scrollVariants}
@@ -35,35 +40,62 @@ export default function Projets() {
           </motion.h2>
           <motion.p
             variants={scrollVariants}
-            className="text-gray-400 mt-6 text-sm"
+            className="text-gray-400 mt-4 text-sm"
           >
-            Les projets arrivent bientôt.
+            Cliquez sur un projet pour en voir les détails.
           </motion.p>
         </motion.div>
 
-        {/* Placeholder grid */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-60px" }}
-          variants={staggerContainer}
-          className="grid md:grid-cols-3 gap-5"
-        >
-          {[...Array(3)].map((_, i) => (
+        {/* Project grid */}
+        <div className="grid md:grid-cols-2 gap-6">
+          {projectsData.map((project, i) => (
             <motion.div
               key={i}
-              variants={scrollVariants}
-              className="bg-white rounded-2xl overflow-hidden"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ delay: i * 0.08 }}
             >
-              <div className="h-52 bg-gray-100 animate-pulse" />
-              <div className="p-6">
-                <div className="h-3 bg-gray-100 rounded-full w-1/3 mb-3 animate-pulse" />
-                <div className="h-4 bg-gray-100 rounded-full w-3/4 mb-2 animate-pulse" />
-                <div className="h-4 bg-gray-100 rounded-full w-1/2 animate-pulse" />
-              </div>
+              <Link href={`/projets/${project.slug}`}>
+                <motion.div
+                  className="relative rounded-3xl overflow-hidden cursor-pointer group h-[260px] sm:h-[340px] md:h-[420px]"
+                  whileHover={{ scale: 1.015 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                >
+                  {/* Background gradient */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient}`} />
+
+                  {/* Category tag */}
+                  <div className="absolute top-6 left-6 z-10">
+                    <span className="px-3 py-1 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white text-xs font-medium">
+                      {project.category}
+                    </span>
+                  </div>
+
+                  {/* Sector-specific visual */}
+                  {(() => { const Visual = cardVisuals[i]; return Visual ? <Visual /> : null; })()}
+
+                  {/* Bottom info */}
+                  <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
+                    <div>
+                      <h3 className="text-white font-semibold text-lg">{project.title}</h3>
+                      <p className="text-white/40 text-xs mt-1">{project.client} · {project.date}</p>
+                    </div>
+                    <motion.div
+                      className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20 group-hover:bg-white/20 transition-colors"
+                      whileHover={{ rotate: 45 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <path d="M2 12L12 2M12 2H5M12 2V9" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </motion.div>
+                  </div>
+                </motion.div>
+              </Link>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

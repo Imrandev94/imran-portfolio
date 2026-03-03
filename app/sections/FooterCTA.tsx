@@ -135,7 +135,7 @@ function CalendarWidget() {
 
 export default function FooterCTA() {
   return (
-    <section className="bg-black text-white py-24" id="footer-cta">
+    <section className="bg-black text-white py-14" id="footer-cta">
       <div className="max-w-[1440px] mx-auto px-6 md:px-16">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left */}

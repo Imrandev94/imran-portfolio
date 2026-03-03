@@ -35,7 +35,7 @@ export default function HowItWorks() {
   const y = useTransform(scrollYProgress, [0, 1], ["6%", "-6%"]);
 
   return (
-    <section ref={ref} className="py-16 bg-[#f5f5f5]" id="how-it-works">
+    <section ref={ref} className="py-10 bg-[#f5f5f5]" id="how-it-works">
       <motion.div style={{ y }} className="max-w-[1440px] mx-auto px-6 md:px-16">
         {/* Badge + Title */}
         <motion.div
@@ -43,7 +43,7 @@ export default function HowItWorks() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           variants={staggerContainer}
-          className="text-center mb-10"
+          className="text-center mb-7"
         >
           <motion.span
             variants={scrollVariants}

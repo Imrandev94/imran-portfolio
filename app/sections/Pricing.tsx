@@ -54,7 +54,7 @@ const devisFeatures = [
 
 export default function Pricing() {
   return (
-    <section className="py-24 bg-[#f5f5f5]" id="pricing">
+    <section className="py-14 bg-[#f5f5f5]" id="pricing">
       <div className="max-w-[1440px] mx-auto px-6 md:px-16">
         {/* Badge + Title */}
         <motion.div
@@ -62,7 +62,7 @@ export default function Pricing() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           variants={staggerContainer}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
           <motion.span
             variants={scrollVariants}
