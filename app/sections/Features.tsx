@@ -13,7 +13,7 @@ const features = [
   {
     icon: <Smartphone className="w-5 h-5" />,
     title: "100% responsive",
-    description: "Votre site s'adapte parfaitement à tous les écrans — mobile, tablette, desktop — sans compromis sur le design.",
+    description: "Votre site s'adapte parfaitement à tous les écrans : mobile, tablette et desktop, sans compromis sur le design.",
   },
   {
     icon: <Zap className="w-5 h-5" />,

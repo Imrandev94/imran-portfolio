@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { scrollVariants, staggerContainer } from "../hooks/useScrollAnimation";
 import { projectsData } from "../projets/data";
-import DemoPreview from "../components/DemoPreview";
 
 export default function Portfolio() {
   return (
@@ -52,11 +51,8 @@ export default function Portfolio() {
                   whileHover={{ scale: 1.015 }}
                   transition={{ duration: 0.3, ease: "easeOut" }}
                 >
-                  {/* Gradient placeholder (shows while iframe loads) */}
+                  {/* Background gradient */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient}`} />
-
-                  {/* Live demo preview */}
-                  <DemoPreview slug={project.slug} />
 
                   {/* Overlay — bottom gradient for text legibility */}
                   <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/70 to-transparent z-10" />

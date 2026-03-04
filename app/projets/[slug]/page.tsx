@@ -4,17 +4,8 @@ import { useParams, notFound } from "next/navigation";
 import Navbar from "../../components/Navbar";
 import Footer from "../../sections/Footer";
 import { projectsData } from "../data";
-import AtelierMartinPage from "./AtelierMartin";
-import ElecProPage from "./ElecPro";
-import StudioLynaPage from "./StudioLyna";
-import CleanAutoPage from "./CleanAuto";
 
-const PAGE_MAP = {
-  "atelier-martin": AtelierMartinPage,
-  "elecpro-services": ElecProPage,
-  "studio-lyna-beaute": StudioLynaPage,
-  "cleanauto-express": CleanAutoPage,
-} as const;
+const PAGE_MAP: Record<string, React.ComponentType<{ project: (typeof projectsData)[0] }>> = {};
 
 export default function ProjectDetailPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -22,7 +13,7 @@ export default function ProjectDetailPage() {
 
   if (!project) return notFound();
 
-  const PageComponent = PAGE_MAP[slug as keyof typeof PAGE_MAP];
+  const PageComponent = PAGE_MAP[slug];
   if (!PageComponent) return notFound();
 
   return (

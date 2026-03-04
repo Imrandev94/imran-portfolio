@@ -23,7 +23,7 @@ const faqs = [
   {
     question: "Mon site sera-t-il visible sur mobile ?",
     answer:
-      "Absolument. Chaque site est conçu en responsive design dès le départ — il s'adapte parfaitement à tous les écrans : mobile, tablette et desktop. C'est un standard non négociable.",
+      "Absolument. Chaque site est conçu en responsive design dès le départ et s'adapte parfaitement à tous les écrans : mobile, tablette et desktop. C'est un standard non négociable.",
   },
   {
     question: "Le référencement (SEO) est-il inclus ?",
@@ -33,7 +33,7 @@ const faqs = [
   {
     question: "Combien de révisions puis-je demander ?",
     answer:
-      "Je travaille jusqu'à ce que vous soyez satisfait. Des allers-retours sont prévus dans le process : une première version, vos retours, puis les ajustements nécessaires. Pas de limite arbitraire — l'objectif est que vous soyez pleinement satisfait du résultat.",
+      "Je travaille jusqu'à ce que vous soyez satisfait. Des allers-retours sont prévus dans le process : une première version, vos retours, puis les ajustements nécessaires. L'objectif est que vous soyez pleinement satisfait du résultat.",
   },
   {
     question: "Que se passe-t-il après la livraison du site ?",

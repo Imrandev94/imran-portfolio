@@ -42,7 +42,7 @@ export default function FooterCTA() {
             variants={scrollVariants}
             className="text-gray-400 text-base md:text-lg leading-relaxed mb-8 md:mb-10"
           >
-            Envoyez-moi un message via le formulaire de contact — on définit
+            Envoyez-moi un message via le formulaire de contact. On définit
             ensemble vos besoins, le délai et le budget. Sans pression, sans engagement.
           </motion.p>
 

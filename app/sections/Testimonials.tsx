@@ -43,7 +43,7 @@ const testimonials = [
     initials: "TR",
     color: "from-blue-400 to-indigo-500",
     quote:
-      "La plus grande surprise, c'est à quel point Imrandev comprend vraiment l'identité de marque. Il ne se contente pas d'exécuter — il pense à ce qui convertit le mieux pour votre audience.",
+      "La plus grande surprise, c'est à quel point Imrandev comprend vraiment l'identité de marque. Il ne se contente pas d'exécuter : il pense à ce qui convertit le mieux pour votre audience.",
   },
   {
     name: "Léa Fontaine",

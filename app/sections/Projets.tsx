@@ -4,9 +4,6 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { scrollVariants, staggerContainer } from "../hooks/useScrollAnimation";
 import { projectsData } from "../projets/data";
-import { WoodVisual, CircuitVisual, BeautyVisual, CarVisual } from "../components/ProjectCardVisual";
-
-const cardVisuals = [WoodVisual, CircuitVisual, BeautyVisual, CarVisual];
 
 export default function Projets() {
   return (
@@ -71,9 +68,6 @@ export default function Projets() {
                       {project.category}
                     </span>
                   </div>
-
-                  {/* Sector-specific visual */}
-                  {(() => { const Visual = cardVisuals[i]; return Visual ? <Visual /> : null; })()}
 
                   {/* Bottom info */}
                   <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
