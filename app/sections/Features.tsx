@@ -1,7 +1,6 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { scrollVariants, staggerContainer } from "../hooks/useScrollAnimation";
 import { Search, Smartphone, Zap, Shield, BarChart2, Headphones } from "lucide-react";
 
@@ -40,24 +39,20 @@ const features = [
 
 
 export default function Features() {
-  const ref = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], ["5%", "-5%"]);
-
   return (
-    <section ref={ref} className="py-14 bg-[#f5f5f5]" id="features">
-      <motion.div style={{ y }} className="max-w-[1440px] mx-auto px-6 md:px-16">
+    <section className="section bg-[#f5f5f5]" id="features">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-16">
         {/* Badge + Title */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           variants={staggerContainer}
-          className="text-center mb-10"
+          className="text-center mb-6 md:mb-10"
         >
           <motion.span
             variants={scrollVariants}
-            className="inline-block px-4 py-2 bg-white rounded-full text-sm font-medium mb-6 border border-gray-200"
+            className="inline-block px-4 py-2 bg-white rounded-full text-sm font-medium mb-3 md:mb-6 border border-gray-200"
           >
             Fonctionnalités
           </motion.span>
@@ -102,7 +97,7 @@ export default function Features() {
           ))}
         </motion.div>
 
-      </motion.div>
+      </div>
     </section>
   );
 }

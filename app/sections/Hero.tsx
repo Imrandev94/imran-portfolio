@@ -1,22 +1,14 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function Hero() {
-  const ref = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
-
-  const yText = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
 
   return (
-    <section ref={ref} className="relative bg-[#f5f5f5] overflow-visible">
+    <section className="relative bg-[#f5f5f5]">
       {/* Decorative image */}
-      <div className="pointer-events-none select-none absolute z-0 top-1/2 -translate-y-1/2 right-1/4 w-[280px] md:w-[380px] lg:w-[480px] max-w-none hidden sm:block">
+      <div className="pointer-events-none select-none absolute z-0 top-1/2 -translate-y-1/2 right-[27%] w-[260px] md:w-[360px] lg:w-[440px] max-w-none hidden sm:block">
         <Image
           src="/hero-visual.png"
           alt=""
@@ -25,19 +17,27 @@ export default function Hero() {
           priority
           className="w-full h-auto"
           style={{
-            maskImage: "radial-gradient(ellipse at center, black 20%, transparent 70%)",
-            WebkitMaskImage: "radial-gradient(ellipse at center, black 20%, transparent 70%)",
+            maskImage: [
+              "linear-gradient(to right,  transparent 0%, black 15%, black 85%, transparent 100%)",
+              "linear-gradient(to bottom, transparent 0%, black 30%, black 65%, transparent 100%)",
+            ].join(", "),
+            WebkitMaskImage: [
+              "linear-gradient(to right,  transparent 0%, black 15%, black 85%, transparent 100%)",
+              "linear-gradient(to bottom, transparent 0%, black 30%, black 65%, transparent 100%)",
+            ].join(", "),
+            maskComposite: "intersect",
+            WebkitMaskComposite: "source-in",
           }}
         />
       </div>
 
-      <div className="mx-auto max-w-[1520px] px-6 md:px-16 pt-28 md:pt-40 pb-6 grid grid-cols-12 items-start">
+      <div className="mx-auto max-w-[1520px] px-6 md:px-16 pt-12 md:pt-24 pb-12 md:pb-24 grid grid-cols-12 items-start">
 
         {/* Left — text content */}
-        <motion.div style={{ y: yText }} className="relative z-10 col-span-12 lg:col-span-6">
+        <div className="relative z-10 col-span-12 lg:col-span-6">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="flex flex-wrap gap-2 mb-8"
           >
@@ -52,8 +52,8 @@ export default function Hero() {
           </motion.div>
 
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] mb-6 tracking-tight"
           >
@@ -71,8 +71,8 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
             className="text-lg text-gray-500 max-w-md mb-10 leading-relaxed"
           >
@@ -82,8 +82,8 @@ export default function Hero() {
 
           {/* CTA Buttons */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
             className="flex flex-wrap gap-4 items-center"
           >
@@ -114,7 +114,7 @@ export default function Hero() {
               </div>
             </motion.a>
           </motion.div>
-        </motion.div>
+        </div>
 
 
       </div>

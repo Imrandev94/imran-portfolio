@@ -15,7 +15,7 @@ export default function Home() {
     <>
       <IntroAnimation />
       <Navbar />
-      <main>
+      <main className="pt-16">
         <Hero />
         <HowItWorks />
         <Portfolio />

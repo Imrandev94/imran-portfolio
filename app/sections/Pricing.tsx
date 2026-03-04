@@ -54,7 +54,7 @@ const devisFeatures = [
 
 export default function Pricing() {
   return (
-    <section className="py-14 bg-[#f5f5f5]" id="pricing">
+    <section className="section bg-[#f5f5f5]" id="pricing">
       <div className="max-w-[1440px] mx-auto px-6 md:px-16">
         {/* Badge + Title */}
         <motion.div
@@ -62,11 +62,11 @@ export default function Pricing() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           variants={staggerContainer}
-          className="text-center mb-10"
+          className="text-center mb-6 md:mb-10"
         >
           <motion.span
             variants={scrollVariants}
-            className="inline-block px-4 py-2 bg-white rounded-full text-sm font-medium mb-6 border border-gray-200"
+            className="inline-block px-4 py-2 bg-white rounded-full text-sm font-medium mb-3 md:mb-6 border border-gray-200"
           >
             Tarifs
           </motion.span>
@@ -178,8 +178,8 @@ export default function Pricing() {
 
         {/* Sur Devis Card */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6 }}
           className="bg-white rounded-3xl p-8 md:p-10 border border-gray-200"

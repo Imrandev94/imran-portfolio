@@ -54,7 +54,7 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <section className="py-24 bg-[#f5f5f5]" id="faq">
+    <section className="section bg-[#f5f5f5]" id="faq">
       <div className="max-w-3xl mx-auto px-6 md:px-16">
         <motion.div
           initial="hidden"
@@ -64,14 +64,14 @@ export default function FAQ() {
         >
           <motion.span
             variants={scrollVariants}
-            className="inline-block px-4 py-2 bg-white rounded-full text-sm font-medium mb-6 border border-gray-200"
+            className="inline-block px-4 py-2 bg-white rounded-full text-sm font-medium mb-4 md:mb-6 border border-gray-200"
           >
             FAQs
           </motion.span>
 
           <motion.h2
             variants={scrollVariants}
-            className="text-4xl md:text-5xl font-bold mb-4 leading-tight"
+            className="text-4xl md:text-5xl font-bold mb-3 md:mb-4 leading-tight"
           >
             Questions{" "}
             <span
@@ -84,7 +84,7 @@ export default function FAQ() {
 
           <motion.div
             variants={scrollVariants}
-            className="flex items-center justify-between mb-12"
+            className="flex items-center justify-between mb-7 md:mb-12"
           >
             <div>
               <p className="text-sm text-gray-400 mb-1">Email</p>

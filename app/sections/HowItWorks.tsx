@@ -1,7 +1,6 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { scrollVariants, staggerContainer } from "../hooks/useScrollAnimation";
 import { MessageCircle, Code2, Rocket } from "lucide-react";
 
@@ -30,24 +29,20 @@ const steps = [
 ];
 
 export default function HowItWorks() {
-  const ref = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], ["6%", "-6%"]);
-
   return (
-    <section ref={ref} className="py-10 bg-[#f5f5f5]" id="how-it-works">
-      <motion.div style={{ y }} className="max-w-[1440px] mx-auto px-6 md:px-16">
+    <section className="section bg-[#f5f5f5]" id="how-it-works">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-16">
         {/* Badge + Title */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           variants={staggerContainer}
-          className="text-center mb-7"
+          className="text-center mb-5 md:mb-7"
         >
           <motion.span
             variants={scrollVariants}
-            className="inline-block px-4 py-2 bg-white rounded-full text-sm font-medium mb-5 border border-gray-200"
+            className="inline-block px-4 py-2 bg-white rounded-full text-sm font-medium mb-3 md:mb-5 border border-gray-200"
           >
             Comment ça marche
           </motion.span>
@@ -95,7 +90,7 @@ export default function HowItWorks() {
             </motion.div>
           ))}
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   );
 }

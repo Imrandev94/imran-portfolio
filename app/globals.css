@@ -107,6 +107,19 @@ html {
   font-family: var(--font-playfair), Georgia, serif;
 }
 
+/* Uniform section spacing — apply to every section on the home page */
+.section {
+  padding-top: 2.5rem;   /* 40px — mobile */
+  padding-bottom: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-top: 4rem;   /* 64px — desktop */
+    padding-bottom: 4rem;
+  }
+}
+
 @keyframes floatY {
   0%, 100% { transform: translateY(0px); }
   50%       { transform: translateY(-8px); }
