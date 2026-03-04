@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { resetIntro } from "./IntroAnimation";
 
 const navLinks = [
   { label: "Accueil", href: "/" },
@@ -61,8 +60,6 @@ export default function Navbar() {
               if (window.location.pathname === "/") {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: "smooth" });
-              } else {
-                resetIntro();
               }
             }}
             className="text-2xl text-black"

@@ -66,7 +66,7 @@ export default function Portfolio() {
                     <span className="px-3 py-1 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white text-xs font-medium">
                       {project.category}
                     </span>
-                  </div>}
+                  </div>
 
                   {/* Bottom info */}
                   <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between z-20">

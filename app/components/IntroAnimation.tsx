@@ -17,7 +17,7 @@ export default function IntroAnimation() {
     if (!introHasPlayed) {
       introHasPlayed = true;
       setVisible(true);
-      const timer = setTimeout(() => setVisible(false), 1800);
+      const timer = setTimeout(() => setVisible(false), 500);
       return () => clearTimeout(timer);
     }
   }, []);
@@ -29,12 +29,12 @@ export default function IntroAnimation() {
           className="fixed inset-0 z-[200] bg-[#f5f5f5] flex items-center justify-center"
           initial={{ y: 0 }}
           exit={{ y: "-100%" }}
-          transition={{ duration: 0.9, ease: [0.76, 0, 0.24, 1] }}
+          transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
         >
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="text-4xl text-black select-none"
             style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontStyle: "italic" }}
           >
